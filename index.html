@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mark's Crystal Game!</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<style type="text/css">
+
+
+body{
+	background-image: url("http://www.xsjjys.com/data/out/259/WHDQ-513926740.jpg");
+}
+h1{
+	color: white;
+}
+.crystalone
+{
+	width:200px;
+	height:200px;
+	float:left;
+}
+.crystaltwo
+{
+	width:200px;
+	height:200px;
+	float:left;
+}
+.crystalthree
+{
+	width:200px;
+	height:200px;
+	float:left;
+}
+.crystalfour
+{
+	width:200px;
+	height:200px;
+}
+
+</style>
+
+
+</head>
+<body>
+
+ <h1>Number to Guess: <span id="number-to-guess"></span></h1>
+ <h1>Wins: <span id="wins"></span></h1>
+  <h1>Loses: <span id="loses"></span></h1>
+
+<div id="crystal1">
+	<img class="crystalone" src="https://vignette1.wikia.nocookie.net/marvel-contestofchampions/images/c/c6/Crystal_superiorironman.png/revision/latest?cb=20151122000247" alt="crystal1">
+</div>
+<div id="crystal2">
+	<img class="crystaltwo" src="https://vignette.wikia.nocookie.net/marvel-contestofchampions/images/3/31/Crystal_multi_4thofjuly.png/revision/latest?cb=20151121235457" alt="crystal2">
+</div>
+<div id="crystal3">
+	<img class="crystalthree" src="https://vignette.wikia.nocookie.net/marvel-contestofchampions/images/4/49/Crystal_drstrange.png/revision/latest?cb=20151121234017" alt="crystal3">
+</div>
+<div id="crystal4">
+	<img class="crystalfour" src="http://mbch.guide/wp-content/uploads/crystal_multi_guardians.png" alt="crystal3">
+</div>
+<div>
+<button id="reset" class="btn btn-primary number" value="1"><h1>reset</h1></button>
+</div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script>
+
+	var targetnumber = Math.floor((Math.random() * 100) + 1);
+ 	$("#number-to-guess").text(targetnumber);
+	var counter=0;
+	var wins=0;
+	$("#wins").text(wins);
+	var loses=0;
+	$("#loses").text(loses)
+ 	 var numberOptions = [10, 6, 3,7];
+
+
+
+
+	$(".crystalone").on("click", function(){
+    counter += 10;
+	alert("Your new score is: " + counter);
+		if (counter === targetnumber){
+		alert("you win")
+		wins++;
+		location.reload();
+	}
+
+
+	else if (counter > targetnumber) {
+		alert("you lose")
+		loses +=1;
+		location.reload();
+	}
+});
+		$(".crystaltwo").on("click", function(){
+    counter += 7;
+	alert("Your new score is: " + counter);
+
+	if (counter === targetnumber){
+		alert("you win")
+		wins++;
+		location.reload();
+	}
+
+
+	else if (counter > targetnumber) {
+		alert("you lose")
+		loses +=1;
+		location.reload();
+	}
+});
+
+		$(".crystalthree").on("click", function(){
+    counter += 5
+
+    ;
+	alert("Your new score is: " + counter);
+		if (counter === targetnumber){
+		alert("you win");
+		wins++;
+		;
+	}
+
+
+	else if (counter > targetnumber) {
+		alert("you lose")
+		loses +=1;
+		
+	}
+});
+
+		$(".crystalfour").on("click", function(){
+    counter += 1;
+	alert("Your new score is: " + counter);
+		if (counter === targetnumber){
+		alert("you win")
+		wins++;
+		
+	}
+
+
+	else if (counter > targetnumber) {
+		alert("you lose")
+		loses +=1;
+		
+	}
+});
+
+</script>
+</body>
+</html>
